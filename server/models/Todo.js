@@ -8,6 +8,10 @@ const todoSChema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 const todo = mongoose.model("Todo", todoSChema);
 module.exports = todo;

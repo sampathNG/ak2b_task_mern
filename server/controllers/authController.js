@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
     phone: req.body.phone,
   });
   await user.save();
-  console.log(user);
+  // console.log(user);
   res.json({ message: "User registered successfully" });
 };
 exports.login = async (req, res) => {
@@ -27,6 +27,6 @@ exports.login = async (req, res) => {
     { userId: user._id, exp: Math.floor(Date.now() / 1000) + 60 * 60 * 48 },
     "secretkey"
   );
-  console.log(token);
+  // console.log(token);
   res.json({ token });
 };

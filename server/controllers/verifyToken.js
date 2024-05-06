@@ -6,7 +6,6 @@ const verifyToken = async (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized" });
   }
   const token = authHeader.split(" ")[1];
-
   try {
     const decoded = jwt.verify(token, secretKey);
     req.user = decoded;
